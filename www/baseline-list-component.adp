@@ -1,14 +1,16 @@
-
-	<table cellspacing="1" cellpadding="3">
-	  <form action=/intranet-baseline/action method=POST>
+        <form action=/intranet-baseline/action method=POST>
+	<table class="table_list_page">
+	<thead>
 	  <%= [export_form_vars return_url] %>
-	  <tr class="rowtitle">
-	    <th>&nbsp;</td>
-	    <th><%= [lang::message::lookup "" intranet-baseline.Baselines_Baseline "Baseline"] %></th>
-	    <th><%= [lang::message::lookup "" intranet-baseline.Baseline_Type "Type"] %></th>
-	    <th><%= [lang::message::lookup "" intranet-baseline.Baseline_Status "Status"] %></th>
-	    <th><%= [lang::message::lookup "" intranet-baseline.Baseline_Creation_Date "Creation Date"] %></th>
+	  <tr>
+	    <td>&nbsp;</td>
+	    <td><%= [lang::message::lookup "" intranet-baseline.Baselines_Baseline "Baseline"] %></td>
+	    <td><%= [lang::message::lookup "" intranet-baseline.Baseline_Type "Type"] %></td>
+	    <td><%= [lang::message::lookup "" intranet-baseline.Baseline_Status "Status"] %></td>
+	    <td><%= [lang::message::lookup "" intranet-baseline.Baseline_Creation_Date "Creation Date"] %></td>
 	  </tr>
+	  </thead>
+	  <tbody>
 	  <multiple name="baselines">
 	    <if @baselines.rownum@ odd><tr class="roweven"></if>
 	    <else><tr class="rowodd"></else>
@@ -27,7 +29,8 @@
 	    </td>
 	</tr>
 </if>
-
+	</tbody>
+	<tfoot>
 	<tr class="rowodd">
 	    <td colspan=3 align=left>
 		<select name=action>
@@ -36,10 +39,10 @@
 		<input type=submit value=Apply>
 	    </td>
 	</tr>
-
-	</form>
+	</tfoot>
 	</table>
-	
+	</form>	
+
 <if @object_write@>
 	<ul>
 	<li><a href="@new_baseline_url;noquote@"
