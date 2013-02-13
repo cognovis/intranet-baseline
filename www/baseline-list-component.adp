@@ -1,7 +1,7 @@
         <form action=/intranet-baseline/action method=POST>
+	<%= [export_form_vars return_url] %>
 	<table class="table_list_page">
 	<thead>
-	  <%= [export_form_vars return_url] %>
 	  <tr>
 	    <td>&nbsp;</td>
 	    <td><%= [lang::message::lookup "" intranet-baseline.Baselines_Baseline "Baseline"] %></td>
